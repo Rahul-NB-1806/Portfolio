@@ -1,0 +1,180 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0d0d2b;
+    color: #e0e0e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+table {
+    border-collapse: collapse;
+    inline-size: 100%;
+}
+
+th, td {
+    text-align: start;
+    padding: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header */
+.r1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    border-block-end: 1px solid rgba(255, 255, 255, 0.1);
+    margin-block-end: 40px;
+}
+
+.r1 h1 {
+    color: #ff4a57;
+    font-size: 24px;
+}
+
+.r1 table {
+    inline-size: auto;
+}
+
+.col table tr {
+    display: flex;
+    gap: 25px;
+}
+
+.col th {
+    color: #ccc;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.3s;
+    padding: 0;
+}
+
+.col th:hover {
+    color: #ff4a57;
+}
+
+/* Welcome Section */
+.r2 {
+    margin-block-end: 60px;
+}
+
+.r2 table, .r3 table {
+    inline-size: 100%;
+    max-inline-size: 1100px;
+    margin: 0 auto;
+}
+
+.r2 table tr, .r3 table tr {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.r2 td, .r3 td {
+    flex: 1;
+    min-inline-size: 300px;
+}
+
+.r2 th, .r3 th {
+    flex: 0 0 auto;
+}
+
+.r2 h1 {
+    color: #ff4a57;
+    font-size: 42px;
+    margin-block-end: 15px;
+}
+
+.r2 dt {
+    font-size: 22px;
+    color: #fff;
+    margin-block-end: 12px;
+}
+
+.r2 dd, .r3 dd {
+    font-size: 16px;
+    color: #aaa;
+    line-height: 1.8;
+    max-inline-size: 500px;
+}
+
+.r2 img, .r3 img {
+    border-radius: 15px;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* About Section */
+.r3 {
+    margin-block-end: 60px;
+}
+
+.r3 dt {
+    font-size: 22px;
+    color: #fff;
+    margin-block-end: 12px;
+}
+
+.r3 dd {
+    max-inline-size: 500px;
+}
+
+/* Personal Info */
+.pi {
+    max-inline-size: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.pi table {
+    inline-size: auto;
+    margin: 0 auto 30px;
+}
+
+.pi th {
+    color: #ff4a57;
+    padding-inline-end: 15px;
+    font-weight: 600;
+}
+
+.pi td {
+    color: #ccc;
+    padding: 8px 0;
+}
+
+.btn {
+    display: inline-block;
+    background: #ff4a57;
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #e03e4e;
+}
+
+/* Remove red borders from inline style */
+table {
+    border: none;
+}
+
+tr, td, th {
+    border: none;
+}
+
