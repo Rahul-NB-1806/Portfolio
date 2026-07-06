@@ -22,7 +22,7 @@
     analysis = data;
 
     const root = document.documentElement;
-    const colors = data.colors || ["#4FC3F7", "#29B6F6", "#00B4D8", "#0a1628", "#1a2a4a"];
+    const colors = data.colors || ["#c9a84c", "#dbb95c", "#a08030", "#0b0b0f", "#14141f"];
     const mood = data.mood || "calm";
     const anim = data.animation || {};
     const intensity = anim.intensity || 0.5;
@@ -60,14 +60,14 @@
         100% { filter: brightness(${1 + amp * 0.3}) saturate(${0.8 + amp * 0.4}); }
       }
       .ai-glow {
-        box-shadow: 0 0 ${10 + intensity * 40}px var(--ai-color-1, #4FC3F7),
-                    0 0 ${20 + intensity * 60}px var(--ai-color-2, #29B6F6);
+        box-shadow: 0 0 ${10 + intensity * 30}px var(--ai-color-1, #c9a84c),
+                    0 0 ${20 + intensity * 40}px var(--ai-color-2, #dbb95c);
         transition: box-shadow 2s ease-in-out;
         animation: aiPulse ${interval * 0.5}s ease-in-out infinite alternate;
       }
       @keyframes aiPulse {
-        0% { box-shadow: 0 0 ${10 + intensity * 20}px var(--ai-color-1); }
-        100% { box-shadow: 0 0 ${20 + intensity * 50}px var(--ai-color-2); }
+        0% { box-shadow: 0 0 ${10 + intensity * 15}px var(--ai-color-1); }
+        100% { box-shadow: 0 0 ${20 + intensity * 35}px var(--ai-color-2); }
       }
       .hero-title .highlight {
         background: linear-gradient(135deg, var(--ai-color-1), var(--ai-color-2));
@@ -115,7 +115,7 @@
     const speedFactor = { slow: 0.3, medium: 1, fast: 2 }[speed] || 1;
 
     let pts = [];
-    const n = Math.min(count, 150);
+    const n = Math.min(count, 80);
 
     for (let i = 0; i < n; i++) {
       pts.push({
@@ -188,11 +188,11 @@
       .catch((err) => {
         console.warn("AI analysis unavailable, using defaults:", err.message);
         applyAnalysis({
-          colors: ["#4FC3F7", "#29B6F6", "#00B4D8", "#0a1628", "#1a2a4a"],
-          mood: "calm",
-          style_adjectives: ["modern", "professional", "clean"],
+          colors: ["#c9a84c", "#dbb95c", "#a08030", "#0b0b0f", "#14141f"],
+          mood: "warm",
+          style_adjectives: ["editorial", "refined", "luxe"],
           objects: ["person", "desk"],
-          animation: { intensity: 0.5, speed: "medium", particle_count: 60, bg_gradient_direction: "to bottom" },
+          animation: { intensity: 0.4, speed: "medium", particle_count: 60, bg_gradient_direction: "to bottom" },
         });
       });
   }

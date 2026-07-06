@@ -4,13 +4,15 @@
   function getPreferredTheme() {
     const stored = localStorage.getItem(STORAGE_KEY);
     if (stored === "dark" || stored === "light") return stored;
-    return window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light";
+    return "dark";
   }
 
   function applyTheme(theme) {
     document.documentElement.setAttribute("data-theme", theme);
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) {
+      meta.content = theme === "dark" ? "#0b0b0f" : "#f8f6f0";
+    }
   }
 
   function toggleTheme() {
@@ -31,12 +33,6 @@
     const btn = document.getElementById("theme-toggle");
     if (btn) {
       btn.addEventListener("click", toggleTheme);
-    }
-  });
-
-  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function (e) {
-    if (!localStorage.getItem(STORAGE_KEY)) {
-      applyTheme(e.matches ? "dark" : "light");
     }
   });
 })();

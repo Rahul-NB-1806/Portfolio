@@ -13,7 +13,7 @@
 
   // ===== Four-corner positions =====
   // Resume: scaled from Paint coords (1533×772) to actual image (1535×1024)
-  // Laptop: estimated screen area
+  // Lapinset-block-start: estimated screen area
   var objects = [
     {
       name: "resume",
@@ -181,10 +181,10 @@
     el.style.zIndex = "100";
     el.style.clipPath = "none";
     el.style.borderStyle = "solid";
-    el.style.borderColor = "rgba(255, 255, 255, 0.5)";
-    el.style.background = "rgba(255, 255, 255, 0.1)";
+    el.style.borderColor = "rgba(201, 168, 76, 0.5)";
+    el.style.background = "rgba(201, 168, 76, 0.08)";
     el.style.backdropFilter = "blur(4px)";
-    el.style.boxShadow = "0 0 80px rgba(0, 150, 255, 0.3), 0 0 200px rgba(0,0,0,0.5)";
+    el.style.boxShadow = "0 0 80px rgba(201, 168, 76, 0.2), 0 0 200px rgba(0,0,0,0.5)";
     el.classList.add("hotspot--expanded");
 
     el.querySelector(".hotspot-label").textContent = "Opening...";
@@ -227,14 +227,15 @@
 
     deskScene.classList.add("transitioning");
     deskScene.style.transition =
-      "transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease";
+      "transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease";
     deskScene.style.transform =
-      "perspective(1200px) rotateX(0deg) scale(6) translateY(-2%)";
+      "perspective(1200px) rotateX(4deg) scale(7) translateY(-3%)";
     deskScene.style.opacity = "0";
+    deskScene.style.filter = "brightness(0)";
 
     var overlay = document.createElement("div");
     overlay.className = "hotspot-overlay portfolio-overlay";
-    overlay.style.background = "var(--bg, #000)";
+    overlay.style.background = "var(--bg, #0b0b0f)";
     overlay.style.backdropFilter = "none";
     overlay.style.zIndex = "20";
     document.body.appendChild(overlay);

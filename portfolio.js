@@ -416,7 +416,7 @@
 
         setTimeout(function () {
           submitBtn.classList.remove("success");
-          submitBtn.querySelector(".btn-text").textContent = "Send Message ✦";
+          submitBtn.querySelector(".btn-text").textContent = "Send Message";
           submitBtn.disabled = false;
         }, 3000);
       }, 1500);
@@ -440,7 +440,7 @@
   if (themeBtn) {
     function updateThemeIcon() {
       const theme = document.documentElement.getAttribute("data-theme");
-      themeBtn.textContent = theme === "dark" ? "☀️" : "🌙";
+      themeBtn.textContent = theme === "dark" ? "⊙" : "✦";
     }
 
     updateThemeIcon();
