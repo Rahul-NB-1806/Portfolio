@@ -12,6 +12,7 @@ node_modules/
 out/
 
 # production
+dist/
 build/
 
 # misc
