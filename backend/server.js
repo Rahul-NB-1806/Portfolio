@@ -11,14 +11,11 @@ const INVOKE_URL = "https://integrate.api.nvidia.com/v1/chat/completions";
 
 app.use(cors());
 app.use(express.json({ limit: "50mb" }));
-app.use(express.static(__dirname));
 
 app.post("/api/analyze", async (req, res) => {
   try {
     const { image } = req.body;
-    if (!image) {
-      return res.status(400).json({ error: "Image data is required" });
-    }
+    if (!image) return res.status(400).json({ error: "Image data is required" });
 
     const payload = {
       model: "moonshotai/kimi-k2.6",
@@ -81,19 +78,14 @@ Pick 5 dominant colors from the image. Set intensity based on mood (energetic=hi
     res.json(analysis);
   } catch (err) {
     console.error("Analysis error:", err);
-    res.status(500).json({
-      error: "Analysis failed",
-      detail: err.message,
-    });
+    res.status(500).json({ error: "Analysis failed", detail: err.message });
   }
 });
 
 app.post("/api/detect-objects", async (req, res) => {
   try {
     const { image, mime } = req.body;
-    if (!image) {
-      return res.status(400).json({ error: "Image data is required" });
-    }
+    if (!image) return res.status(400).json({ error: "Image data is required" });
 
     const contentType = mime || "image/png";
 
@@ -132,7 +124,7 @@ Return a JSON object with this exact structure (raw JSON only, no markdown, no c
       "name": "resume paper",
       "x": number (0-100, left edge as % of image width),
       "y": number (0-100, top edge as % of image height),
-      "width": number (0-100, width as % of image width),
+      "width": number (0-100, width as % of image height),
       "height": number (0-100, height as % of image height),
       "action": "resume"
     }
@@ -179,10 +171,7 @@ Rules:
     res.json(result);
   } catch (err) {
     console.error("Detection error:", err);
-    res.status(500).json({
-      error: "Detection failed",
-      detail: err.message,
-    });
+    res.status(500).json({ error: "Detection failed", detail: err.message });
   }
 });
 
