@@ -13,7 +13,6 @@ import Connect from './components/Connect'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import ResumeViewer from './components/ResumeViewer'
-import AIAnalysis from './components/AIAnalysis'
 
 export default function App() {
   const [resumeOpen, setResumeOpen] = useState(false)
@@ -39,8 +38,6 @@ export default function App() {
 
   return (
     <>
-      <AIAnalysis />
-
       <div
         id="portfolio"
         className="portfolio visible"
